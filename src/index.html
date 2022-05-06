@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+            integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Front</title>
+</head>
+<body>
+
+<div>
+    <div id="div">
+
+    </div>
+</div>
+
+<script>
+    const socket = io('http://localhost:5500');
+
+    const textBlock = document.getElementById('div');
+
+    console.log(socket);
+
+    socket.on('message', (data) => {
+      textBlock.innerText = data.data;
+    });
+
+
+</script>
+</body>
+</html>
